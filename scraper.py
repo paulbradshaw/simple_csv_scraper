@@ -7,9 +7,9 @@ reader = csv.DictReader(data.splitlines())
 record = {}
 
 for row in reader:
-    print "Row item 3:", row[' Invoice Amount '][2:]
+    print "Row item 3:", row['Actual Funding Award'][2:]
     for num in range(0,8):
         print "column %d : " % num, type(row.keys()[num]) 
-    row[' Invoice Amount '] = row[' Invoice Amount '][2:]
-    print row['Doc Number']
-    scraperwiki.sqlite.save(['Doc Number'], row)
+    row['Actual Funding Award'] = row['Actual Funding Award'][2:]
+    print row['Ref. No.']
+    scraperwiki.sqlite.save(['Ref. No.'], row)
