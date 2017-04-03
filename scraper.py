@@ -10,8 +10,9 @@ for row in reader:
     for num in range(0,8):
         print "column %d : " % num, type(row.keys()[num]) 
     row['Actual Funding Award'] = row['Actual Funding Award'].decode("latin-1")
-    row["Annual Total 2012/2013"] = row["Annual Total 2012/2013"].decode("latin-1")
-    #row['Actual Funding Award'] = row['Actual Funding Award'].decode("latin-1")
-    #row['Actual Funding Award'] = row['Actual Funding Award'].decode("latin-1")
+    row['Annual Total 2012/2013'] = row['Annual Total 2012/2013'].decode("latin-1")
+    row['Annual Total 2013/2014'] = row['Annual Total 2013/2014'].decode("latin-1")
+    row['Annual Total 2014/2015'] = row['Annual Total 2014/2015'].decode("latin-1")
+    row['Overall Total Paid'] = row['Overall Total Paid'].decode("latin-1")
     print row['Ref. No.']
     scraperwiki.sqlite.save(['Ref. No.'], row)
