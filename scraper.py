@@ -2,11 +2,8 @@ import scraperwiki
 import csv
 data = scraperwiki.scrape('https://data.birmingham.gov.uk/dataset/14492d37-1a77-4d46-9204-27363fc62149/resource/bacf38dd-3530-4c95-a0c3-83e21c9b2259/download/sgmsreportsvcsfreportsvcsfreports201415vcsfreport2014qtr1final.csv')
 
-reader = csv.DictReader(data.splitlines())
+reader = csv.DictReader(data.splitlines(), fieldnames=("ref", "org", "status", "start", "end", "revised end", "directorate" "actual award"))
 
-for row in reader[0]:
-    for key, value in row.iteritems():
-        print key
 
 for row in reader:
     #for key, value in row.iteritems():
