@@ -4,10 +4,11 @@ data = scraperwiki.scrape('https://data.birmingham.gov.uk/dataset/14492d37-1a77-
 
 reader = csv.DictReader(data.splitlines())
 
+print reader[0]
 
 for row in reader:
-    #for key, value in row.iteritems():
-     #   print key
+    for key, value in row.iteritems():
+        print key
     for num in range(0,8):
         print "column %d : " % num, type(row.keys()[num]) 
     row['Actual Funding Award'] = row['Actual Funding Award'].decode("latin-1")
