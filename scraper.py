@@ -4,12 +4,14 @@ data = scraperwiki.scrape('https://data.birmingham.gov.uk/dataset/14492d37-1a77-
 
 reader = csv.DictReader(data.splitlines())
 
-record = {}
-
 for row in reader:
+    print row["Annual Total 2012/2013"]
     print "Row item 3:", row['Actual Funding Award'][2:]
     for num in range(0,8):
         print "column %d : " % num, type(row.keys()[num]) 
     row['Actual Funding Award'] = row['Actual Funding Award'].decode("latin-1")
+    row["Annual Total 2012/2013"] = row["Annual Total 2012/2013"].decode("latin-1")
+    #row['Actual Funding Award'] = row['Actual Funding Award'].decode("latin-1")
+    #row['Actual Funding Award'] = row['Actual Funding Award'].decode("latin-1")
     print row['Ref. No.']
     scraperwiki.sqlite.save(['Ref. No.'], row)
