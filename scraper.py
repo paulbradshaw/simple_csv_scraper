@@ -3,7 +3,8 @@ import csv
 data = scraperwiki.scrape('https://data.birmingham.gov.uk/dataset/14492d37-1a77-4d46-9204-27363fc62149/resource/bacf38dd-3530-4c95-a0c3-83e21c9b2259/download/sgmsreportsvcsfreportsvcsfreports201415vcsfreport2014qtr1final.csv')
 
 reader = csv.DictReader(data.splitlines())
-print keys(reader)
+for key in reader.keys():
+    print key
 
 for row in reader:
     print row["Annual Total 2012/2013"]
