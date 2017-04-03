@@ -5,7 +5,6 @@ data = scraperwiki.scrape('https://data.birmingham.gov.uk/dataset/14492d37-1a77-
 reader = csv.DictReader(data.splitlines(), fieldnames=("ref", "org", "status", "start", "end", "revised end", "directorate" "actual award"))
 
 for row in reader[0]:
-    print row["Annual Total 2012/2013"]
     for key, value in row.iteritems():
         print key
 
