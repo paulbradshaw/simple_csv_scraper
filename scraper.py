@@ -7,9 +7,6 @@ reader = csv.DictReader(data.splitlines())
 for row in reader:
     for key, value in row.iteritems():
         print key
-    for num in range(0,8):
-        print "column %d : " % num, type(row.keys()[num]) 
-        print "column %d : " % num, type(row.values()[num]) 
     row['Actual Funding Award'] = row['Actual Funding Award'].decode("latin-1")
     row['Annual Total 2012/2013'] = row['Annual Total 2012/2013'].decode("latin-1")
     row['Annual Total 2013/2014'] = row['Annual Total 2013/2014'].decode("latin-1")
