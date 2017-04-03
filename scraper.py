@@ -4,8 +4,6 @@ data = scraperwiki.scrape('https://data.birmingham.gov.uk/dataset/14492d37-1a77-
 
 reader = csv.DictReader(data.splitlines())
 
-print reader[0]
-
 for row in reader:
     for key, value in row.iteritems():
         print key
