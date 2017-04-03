@@ -7,7 +7,7 @@ reader = csv.DictReader(data.splitlines())
 
 for row in reader:
     print row["Annual Total 2012/2013"]
-    for key, value in reader.iteritems():
+    for key, value in row.iteritems():
         print key
     print "Row item 3:", row['Actual Funding Award'][2:]
     for num in range(0,8):
